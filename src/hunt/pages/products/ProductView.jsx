@@ -54,7 +54,7 @@ export const ProductView = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3001/api/createfollowing",
+        "http://localhost:3000/api/createfollowing",
         {
           usernameSeguidor: user.username,
           usernameSeguido: name,

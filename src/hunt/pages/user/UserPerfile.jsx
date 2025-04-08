@@ -16,12 +16,12 @@ export const UserPerfile = () => {
     const fetchTweets = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3001/api/TweetsUser/${user.username}`
+          `http://localhost:3000/api/TweetsUser/${user.username}`
         );
         console.log("Tweets fetched:", res.data.tweets);
         setMessages(res.data.tweets);
 
-        const respo = await axios.get("http://localhost:3001/api/following", {
+        const respo = await axios.get("http://localhost:3000/api/following", {
           usernameSeguidor: user.username,
         });
         console.log("Follow fetched:", respo.data.follow);

@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
   const [authState, dispatch] = useReducer(authReducer, initialState, init);
 
   const login = async (username, password) => {
-    const response = await axios.post("http://localhost:3001/api/login", {
+    const response = await axios.post("http://localhost:3000/api/login", {
       username,
       password,
     });
@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (email, password, name, lastName, username) => {
-    const { ok } = await axios.post("http://localhost:3001/api/register", {
+    const { ok } = await axios.post("http://localhost:3000/api/register", {
       name,
       lastName,
       username,

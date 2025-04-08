@@ -16,7 +16,7 @@ export const ChatApp = () => {
   useEffect(() => {
     const fetchTweets = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/getAllTweets");
+        const res = await axios.get("http://localhost:3000/api/getAllTweets");
         console.log("Tweets fetched:", res.data.tweets);
         setMessages(res.data.tweets);
       } catch (error) {
@@ -73,7 +73,7 @@ export const ChatApp = () => {
     if (newMessage.trim() !== "") {
       try {
         const { data } = await axios.post(
-          "http://localhost:3001/api/createPosts",
+          "http://localhost:3000/api/createPosts",
           {
             username: user.username,
             body: newMessage,
